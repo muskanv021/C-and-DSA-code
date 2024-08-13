@@ -1,0 +1,67 @@
+#include<stdio.h>
+#define size 10 
+
+int a[size],i,ind=-1;
+
+void int_pos(int p,int x)
+{
+    if(ind<size-1)
+    {
+        p=p-1;
+        if(p>=0&& p<=ind+1)
+        {
+            if(p==0){
+                ins_beg(x);
+            }
+            else if(p==ind)
+            {
+                ins_end(x);
+                
+            }
+            else{
+                for(i=ind;i>=p;i++)
+                {
+                    a[i+1]=a[i];
+                }
+                a[p]=x;
+                ind++;
+            }
+        }
+    }
+    else
+    {
+        printf("\n Array is Full");
+    }
+}
+
+
+
+void traverse()
+{
+    if(ind>-1)
+    {
+        printf("\n All elements is:-");
+        for(i=0;i<=ind;i++)
+        {
+            printf("\t %d",a[i]);
+            
+        }
+    }
+    else
+    {
+        printf("\n Array is Empty!!!!");
+        
+    }
+}
+
+int main()
+{
+    traverse();
+    int_end(85);
+    int_end(80);
+    int_end(79);
+    int_end(60);
+    traverse();
+    
+    return 0;
+}
