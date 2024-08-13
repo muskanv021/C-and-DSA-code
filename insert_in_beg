@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node {
+    int data;
+    struct node* link;
+};
+
+struct node* add_beg(struct node* head, int d) {
+    struct node* add_column = malloc(sizeof(struct node));
+    add_column->data = d;
+    add_column->link = head;  // Link the new node to the current head
+    head = add_column;        // Update the head to the new node
+    return head;
+}
+
+int main() {
+    struct node* head = malloc(sizeof(struct node));
+    head->data = 45;
+    head->link = NULL;
+
+    struct node* second = malloc(sizeof(struct node));
+    second->data = 60;
+    second->link = NULL;
+    head->link = second;
+
+    struct node* three = malloc(sizeof(struct node));
+    three->data = 100;
+    three->link = NULL;
+    second->link = three;
+
+    int data = 3;
+    head = add_beg(head, data);
+
+    struct node* add_column = head;
+    while (add_column != NULL) {
+        printf("%d ", add_column->data);
+        add_column = add_column->link;
+    }
+    printf("\n");
+
+    printf("Head node data: %d\n", head->data);
+    printf("Second node data: %d\n", second->data);
+    printf("Third node data: %d\n", three->data);
+
+    printf("\nAddress of first node is: %p\n", (void*)&head->data);
+    printf("Address of second node is: %p\n", (void*)&second->data);
+    printf("Address of third node is: %p\n", (void*)&three->data);
+
+    return 0;
+}
