@@ -22,7 +22,7 @@ void traverse()
 {
     if(ind>-1)
     {
-        printf("\t All elements is:-");
+        printf("\n All elements is:-");
         for(i=0;i<=ind;i++)
         {
             printf("\t %d",a[i]);
