@@ -1,0 +1,49 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include<stdlib.h>
+
+struct node{
+    int data;
+    struct node*link;
+};
+
+
+int main() {
+    struct node *head=NULL;
+    head= (struct node *)malloc(sizeof(struct node));
+    
+    head->data=45;
+    head->link = NULL;
+    
+     struct node *second=NULL;
+    second=malloc(sizeof(struct node));
+    
+    second->data=60;
+    second->link= head;
+    
+    
+    struct node *three=NULL;
+    three=malloc(sizeof(struct node));
+    
+    three->data=100;
+    three->link= second;
+    
+     struct node *add_column=head ;
+    add_column=malloc(sizeof(struct node));
+    
+    add_column->data=10;
+    add_column->link= second;
+    
+    printf("%d",head->data);
+    printf("\t %d",second->data);
+    printf("\t %d",three->data);
+    printf("\t %d",add_column->data);
+    printf("\n address of first node is :- %d",&head->data);
+     printf("\n address of second node is :- %d",&second->data);
+     printf("\n address of third node is :- %d",&three->data);
+    
+    
+    
+
+    return 0;
+}
