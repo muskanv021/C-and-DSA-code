@@ -1,0 +1,40 @@
+            1
+          1 2 1
+        1 2 3 2 1
+      1 2 3 4 3 2 1
+---------------pattern Code--------------------
+
+#include <stdio.h>
+
+int main() {
+  int i,j,k,l;
+  for(i=1;i<=10;i++)
+  {
+      for(j=1;j<=10-i;j++)
+      {
+          printf(" ");
+      }
+      for(k=1;k<=i;k++)
+      {
+          printf("%d",k);
+      }
+      for(k=0;k>=1;k--)
+      {
+          printf("%d ",k);
+      }
+      
+      
+      for(l=i-1;l>=1;l--)
+      {
+          printf("%d",l);
+      }
+      for(l=1;l<=0;l++)
+      {
+          printf("%d",l);
+      }
+      printf("\n");
+  }
+ 
+
+    return 0;
+}
